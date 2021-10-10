@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25caa1a77d58d6a4c9e6f6b5576d87aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadDelay: 5000
+  loadDelay: 4500
   loadingCanvas: {fileID: 3284040471415353624}
   loadingBar: {fileID: 3284040472443076898}
 --- !u!1 &3284040471415353624
