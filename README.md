@@ -1,5 +1,5 @@
 # Extreme-Bowling
-Project created for educational purposes to demonstrate various concepts including a physics based controller, level design with pro builder, gravity change, playing random audio clips, etc.
+This is a project designed for teaching children game design and coding. I have used this in the past to demonstrate various concepts including a physics based controller, level design with pro builder, gravity change, playing random audio clips, etc. Efforts have been made to make the relatively simple while following general clean code principles.
 
 ![extremebowling1](https://user-images.githubusercontent.com/35816507/136680537-5718c3b0-49cf-40ed-99cb-3ca07c102bea.PNG)
 ![extremebowling2](https://user-images.githubusercontent.com/35816507/136680544-f06c37a9-756c-4353-ae44-6a5a73864610.PNG)
