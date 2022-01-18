@@ -57,7 +57,7 @@ namespace SteamK12.ExtremeBowling
 
             movementForce = new Vector3(movementX, verticalVelocity, movementZ);
 
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (Input.GetButtonDown("Jump") && isGrounded && canCheckGround)
             {
                 isJumping = true;
             }
