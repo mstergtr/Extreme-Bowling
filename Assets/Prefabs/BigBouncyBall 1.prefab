@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 60170467708396723}
   - component: {fileID: 60170467708396722}
   - component: {fileID: 60170467708396718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigBouncyBall 1
   m_TagString: BouncyBall
   m_Icon: {fileID: 0}
