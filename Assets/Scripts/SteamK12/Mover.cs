@@ -6,8 +6,8 @@ namespace SteamK12.ExtremeBowling
 {
     public class Mover : MonoBehaviour
     {
-        public float frequency = 1f;
-        public float magnitude = 1f;
+        [SerializeField] float frequency = 1f;
+        [SerializeField] float magnitude = 1f;
         public enum MoveDirection { UpDown, LeftRight };
         public MoveDirection selectedDirection;
 

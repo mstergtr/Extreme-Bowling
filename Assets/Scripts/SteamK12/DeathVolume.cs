@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace SteamK12.ExtremeBowling
 {
@@ -12,7 +8,7 @@ namespace SteamK12.ExtremeBowling
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                LevelManager.instance.RestartScene();
+                LevelManager.Instance.RestartScene();
             }
 
             if (other.gameObject.CompareTag("BouncyBall"))

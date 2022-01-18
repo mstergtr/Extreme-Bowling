@@ -12,7 +12,7 @@ namespace SteamK12.ExtremeBowling
         public int instanceLimit = 3;
         private int instances;
 
-        private void Start()
+        private void Start() 
         {
             instances = 0;
         }
@@ -29,7 +29,7 @@ namespace SteamK12.ExtremeBowling
             audioSource.PlayOneShot(RandomClip());
         }
 
-        private void Update()
+        private void Update() 
         {
             if (!audioSource.isPlaying && instances >= 1)
             {
