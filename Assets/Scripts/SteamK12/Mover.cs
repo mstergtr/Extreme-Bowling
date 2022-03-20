@@ -10,10 +10,10 @@ namespace SteamK12.ExtremeBowling
         [SerializeField] float magnitude = 1f;
         public enum MoveDirection { UpDown, LeftRight };
         public MoveDirection selectedDirection;
+        [SerializeField] float xAngle, yAngle, zAngle;
 
-        private Vector3 startPosition;
-        private Vector3 direction;
-
+        private Vector3 startPosition, direction;
+        
         void Start()
         {
             if (selectedDirection == MoveDirection.UpDown)
@@ -30,6 +30,8 @@ namespace SteamK12.ExtremeBowling
 
         void Update()
         {
+            Vector3 rotationAngles = new Vector3(xAngle, yAngle, zAngle) * Time.deltaTime;
+            transform.Rotate(rotationAngles, Space.World);
             transform.position = startPosition + direction * Mathf.Sin(Time.time * frequency) * magnitude;
         }
     }

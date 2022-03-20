@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 30
   expForce: 1800
+  expPrefab: {fileID: 1278763550006777043, guid: 4e01a6d082b820245890dd4f339ea10a, type: 3}

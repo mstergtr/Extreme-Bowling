@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SteamK12.ExtremeBowling
@@ -5,6 +6,24 @@ namespace SteamK12.ExtremeBowling
     public class GravityShift : MonoBehaviour
     {
         [SerializeField] float gravityY = -9.8f;
+        [SerializeField] bool isGravityTimerOn;
+
+        private void Start() 
+        {
+            if (!isGravityTimerOn) return;
+
+            StartCoroutine(CoGravityTimer());
+        }
+        IEnumerator CoGravityTimer()
+        {
+            while (isGravityTimerOn)
+            {
+                LowerGravity();
+                yield return new WaitForSeconds(3f);
+                IncreaseGravity();
+                yield return new WaitForSeconds(3f);
+            }
+        }
 
         //Make sure to reset the gravity when the level restarts!
         public void ResetGravity()

@@ -12,7 +12,8 @@ namespace SteamK12.ExtremeBowling
         [SerializeField] float jumpForce = 10.0f;
         [SerializeField] LayerMask groundLayer;
         [SerializeField] bool isGrounded;
-        private bool canCheckGround = true;
+        [SerializeField] Transform camTransform;
+        [SerializeField] bool canCheckGround = true;
         private float verticalVelocity;
         private bool isJumping;
         private Rigidbody rb;
@@ -56,6 +57,7 @@ namespace SteamK12.ExtremeBowling
             movementZ = Input.GetAxis("Vertical");
 
             movementForce = new Vector3(movementX, verticalVelocity, movementZ);
+            movementForce = Quaternion.AngleAxis(camTransform.rotation.eulerAngles.y, Vector3.up) * movementForce;
 
             if (Input.GetButtonDown("Jump") && isGrounded && canCheckGround)
             {

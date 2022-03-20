@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -287,10 +287,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loading . . .
+  m_text: LOADING . . .
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5244f9b9f6324e94fa68673d9630214f, type: 2}
-  m_sharedMaterial: {fileID: -34168732809106463, guid: 5244f9b9f6324e94fa68673d9630214f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2001c4a5928402a4d8e11969bfaf0b31, type: 2}
+  m_sharedMaterial: {fileID: 5158128917132996259, guid: 2001c4a5928402a4d8e11969bfaf0b31, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -314,14 +314,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72.7
+  m_fontSize: 102.1
   m_fontSizeBase: 72.7
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 102.1
+  m_fontSizeMax: 153.2
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

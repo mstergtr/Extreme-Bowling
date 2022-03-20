@@ -44,5 +44,10 @@ namespace SteamK12.ExtremeBowling
             yield return new WaitForSeconds(loadDelay);
             SceneManager.LoadScene(currentSceneIndex);
         }
+
+        public void QuitApplication()
+        {
+            Application.Quit();
+        }
     }
 }

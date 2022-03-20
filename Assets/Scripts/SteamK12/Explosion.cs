@@ -6,6 +6,8 @@ namespace SteamK12.ExtremeBowling
     {
         public float blastRadius = 10f;
         public float expForce = 10f;
+        public float upwardsMod = 10f;
+        public GameObject expPrefab;
 
         public void Explode()
         {
@@ -16,10 +18,11 @@ namespace SteamK12.ExtremeBowling
                 Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                    rb.AddExplosionForce(expForce, transform.position, blastRadius);
+                    rb.AddExplosionForce(expForce, transform.position, blastRadius, upwardsMod);
                 }
             }
-
+            
+            Instantiate(expPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -9,8 +9,6 @@ namespace SteamK12.ExtremeBowling
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        public static event Action<GameState> OnBeforeStateChanged;
-        public static event Action<GameState> OnAfterStateChanged;
         public GameState State { get; private set; }
         public enum GameState { Starting = 0, Gameplay = 1, Pause = 2, Win = 3, Lose = 4 }
         [SerializeField] float timeRemaining = 10.0f;
@@ -39,8 +37,6 @@ namespace SteamK12.ExtremeBowling
 
         public void ChangeState(GameState newState) 
         {
-            OnBeforeStateChanged?.Invoke(newState);
-
             State = newState;
             switch (newState) 
             {
@@ -60,8 +56,6 @@ namespace SteamK12.ExtremeBowling
                 default:
                     throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
             }
-
-            OnAfterStateChanged?.Invoke(newState);
         }
 
         private void HandleStarting() 

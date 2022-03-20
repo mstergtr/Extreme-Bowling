@@ -133,3 +133,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+  camTransform: {fileID: 0}

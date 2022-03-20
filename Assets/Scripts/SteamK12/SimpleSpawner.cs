@@ -6,7 +6,7 @@ namespace SteamK12.ExtremeBowling
 {
     public class SimpleSpawner : MonoBehaviour
     {
-        public GameObject enemy;
+        public GameObject prefabToSpawn;
         public Transform[] spawnPoints;
         public bool isSpawning = true;
 
@@ -19,15 +19,15 @@ namespace SteamK12.ExtremeBowling
             {
                 Debug.Log("no spawn points referenced");
             }
-            InvokeRepeating(nameof(SpawnEnemy), spawnTime, timeBetweenSpawns);
+            InvokeRepeating(nameof(SpawnObject), spawnTime, timeBetweenSpawns);
         }
 
-        void SpawnEnemy()
+        void SpawnObject()
         {
             if (!isSpawning) return;
 
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
         }
     }
 }
