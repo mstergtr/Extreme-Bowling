@@ -6,35 +6,61 @@ namespace SteamK12.ExtremeBowling
 {
     public class PlayRandomAudio : MonoBehaviour
     {
-        public AudioSource audioSource;
-        public AudioClip[] audioClipArray;
+        [SerializeField] AudioSource audioSource;
+        [SerializeField] AudioClip[] audioClipArray;
+        [SerializeField] float pitchMin = 1f;
+        [SerializeField] float pitchMax = 1f;
+        [SerializeField] float volumeMin = 1f;
+        [SerializeField] float volumeMax = 1f;
 
-        public int instanceLimit = 3;
+        [Tooltip("Instances are released based on the length of clip index[0]")]
+        [SerializeField] int instanceLimit = 30;
         private int instances;
+        private float clipLength;
 
-        private void Start() 
+        [SerializeField] float minTimeBetweenClips = 0.01f;
+        private float timeSinceLastClip;
+        private bool canPlay;
+
+        private void Start()
         {
-            instances = 0;
+            clipLength = audioClipArray[0].length;
         }
 
-        AudioClip RandomClip()
+        private void Update()
         {
-            return audioClipArray[Random.Range(0, audioClipArray.Length)];
+            if (timeSinceLastClip >= minTimeBetweenClips)
+            {
+                canPlay = true;
+            }
+            else
+            {
+                canPlay = false;
+            }
+
+            timeSinceLastClip += Time.deltaTime;
         }
 
         public void PlayRandomClip()
         {
-            if (instances >= instanceLimit) return;
+            if (instances >= instanceLimit || !canPlay) return;
             instances++;
+            audioSource.pitch = Random.Range(pitchMin, pitchMax);
+            audioSource.volume = Random.Range(volumeMin, volumeMax);
             audioSource.PlayOneShot(RandomClip());
+            timeSinceLastClip = 0;
+            StartCoroutine(InstanceDecrease());
         }
 
-        private void Update() 
+        private AudioClip RandomClip()
         {
-            if (!audioSource.isPlaying && instances >= 1)
-            {
-                instances--;
-            }
+            return audioClipArray[Random.Range(0, audioClipArray.Length)];
+        }
+
+        IEnumerator InstanceDecrease()
+        {
+            yield return new WaitForSeconds(clipLength);
+            instances--;
         }
     }
 }
